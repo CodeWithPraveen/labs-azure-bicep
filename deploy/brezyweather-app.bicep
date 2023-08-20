@@ -12,22 +12,22 @@ param sqlAdminLoginPassword string
 param location string = resourceGroup().location
 
 @description('App Service Plan for hosting BrezyWeather app')
-var appServicePlanName = 'asp-brezyweather-prod'
+param appServicePlanName string = 'asp-brezyweather-prod'
 
 @description('App Service for hosting BrezyWeather app')
-var websiteName = 'app-brezyweather-prod-${uniqueString(resourceGroup().id)}'
+param websiteName string = 'app-brezyweather-prod-${uniqueString(resourceGroup().id)}'
 
 @description('Docker image of the containerized BrezyWeather app')
-var dockerImageName = 'codewithpraveen/labs-appservice-azuresql:1.0'
+param dockerImageName string = 'codewithpraveen/labs-az-bicep:1.0'
 
 @description('Name of the connection string used in the app service to connect to SQL Server')
 param connectionStringName string = 'BrezyWeatherDbConn'
 
 @description('SQL Server used by the BrezyWeather app')
-param sqlServerName string = 'sql-brezyweather-prod'
+param sqlServerName string = 'sql-brezyweather-prod-${uniqueString(resourceGroup().id)}'
 
 @description('SQL database used by the BrezyWeather app')
-var sqlDatabaseName = 'sqldb-brezyweather-prod'
+param sqlDatabaseName string = 'sqldb-brezyweather-prod'
 
 @description('Azure App Service Plan')
 resource appServicePlan 'Microsoft.Web/serverfarms@2020-06-01' = {

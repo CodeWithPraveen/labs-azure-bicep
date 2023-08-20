@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  labs-az-bicep:
+    image: codewithpraveen/labs-az-bicep:1.0
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: BrezyWeather/Dockerfile

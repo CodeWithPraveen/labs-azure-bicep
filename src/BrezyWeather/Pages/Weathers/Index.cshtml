@@ -1,0 +1,52 @@
+﻿@page
+@model BrezyWeather.Pages.Weathers.IndexModel
+
+@{
+    ViewData["Title"] = "Weather Details";
+}
+
+<h1>Temperature Forecasts</h1>
+
+<p>
+    <a asp-page="Create" asp-route-locationid="@Model.LocationID">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Weather[0].Temperature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weather[0].Humidity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weather[0].AirQuality)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Weather) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Temperature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Humidity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AirQuality)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID" asp-route-locationid="@Model.LocationID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID" asp-route-locationid="@Model.LocationID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID" asp-route-locationid="@Model.LocationID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <a asp-page="../Locations/Details" asp-route-id="@Model.LocationID">Back to Location</a>
+</div>
+

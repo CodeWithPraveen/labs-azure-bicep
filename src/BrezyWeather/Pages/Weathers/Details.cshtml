@@ -1,0 +1,37 @@
+﻿@page
+@model BrezyWeather.Pages.Weathers.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Weather</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Weather.Temperature)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Weather.Temperature)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Weather.Humidity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Weather.Humidity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Weather.AirQuality)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Weather.AirQuality)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Weather?.ID" asp-route-locationid="@Model.LocationID">Edit</a> |
+    <a asp-page="./Index" asp-route-id="@Model.Weather?.ID" asp-route-locationid="@Model.LocationID">Back to List</a>
+</div>

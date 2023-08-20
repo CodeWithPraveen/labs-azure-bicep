@@ -1,0 +1,14 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace BrezyWeather.Models
+{
+    public class Weather
+    {
+        public int ID { get; set; }
+        public DateTime DateTime { get; set; }
+        public float Temperature { get; set; }
+        public float Humidity { get; set; }
+        public string AirQuality { get; set; } = string.Empty;
+        public int LocationID { get; set; }
+    }
+}

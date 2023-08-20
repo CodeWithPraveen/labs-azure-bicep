@@ -1,8 +1,8 @@
 @description('SQL Server used by the BrezyWeather app')
-var sqlServerName = 'sql-brezyweather-prod-${uniqueString(resourceGroup().id)}'
+param sqlServerName string = 'sql-brezyweather-prod-${uniqueString(resourceGroup().id)}'
 
 @description('SQL database used by the BrezyWeather app')
-var sqlDatabaseName = 'sqldb-brezyweather-prod'
+param sqlDatabaseName string = 'sqldb-brezyweather-prod'
 
 @description('Admin user of the SQL Server')
 param sqlAdminLogin string
