@@ -20,4 +20,7 @@ The BrezyWeather is a simple .NET Core web app used as a demo project in this la
 ## Prerequisites
 - Basic knowledge of Bicep template file.
 - Basic knowledge of Azure App Service & SQL Database. 
-- Familiarity with Azure CLI and its commands. 
+- Familiarity with Azure CLI and its commands.
+
+## Learn More & Enrol
+https://www.udemy.com/labs/deploy-a-web-app-with-a-sql-database-using-bicep/overview
